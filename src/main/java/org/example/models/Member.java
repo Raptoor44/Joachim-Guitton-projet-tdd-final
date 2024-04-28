@@ -64,7 +64,13 @@ public class Member {
     }
 
     public boolean addReservation(Reservation reservationParam) throws Over3ReservationsInMemberException, NotFoundReservationException {
-        if (reservations.size() < 3) {
+        List<Reservation> reservationsIsValid = new LinkedList<Reservation>();
+
+        for(Reservation reservation : reservations) { //Nous prenons que les réservations qui sont valides.
+            reservationsIsValid.add(reservation);
+        }
+
+        if (reservationsIsValid.size() < 3) {
             return this.reservations.add(reservationParam);
         } else {
             throw new Over3ReservationsInMemberException();
