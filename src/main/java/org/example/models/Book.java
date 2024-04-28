@@ -1,23 +1,20 @@
 package org.example.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 public class Book {
 
     private String Isbn;
 
-    private String Titre;
+    private String Title;
 
-    private String Auteur;
+    private String Author;
 
     private String Editeur;
 
     private org.example.utils.FormatBook FormatBook;
 
     public Book(String title, String author, String isbn, org.example.utils.FormatBook format) {
-        this.Titre = title;
-        this.Auteur = author;
+        this.Title = title;
+        this.Author = author;
         this.Isbn = isbn;
         this.FormatBook = format;
     }
@@ -34,20 +31,20 @@ public class Book {
         this.Isbn = isbn;
     }
 
-    public String getTitre() {
-        return Titre;
+    public String getTitle() {
+        return Title;
     }
 
-    public void setTitre(String titre) {
-        Titre = titre;
+    public void setTitle(String title) {
+        Title = title;
     }
 
-    public String getAuteur() {
-        return Auteur;
+    public String getAuthor() {
+        return Author;
     }
 
-    public void setAuteur(String auteur) {
-        Auteur = auteur;
+    public void setAuthor(String author) {
+        Author = author;
     }
 
     public String getEditeur() {

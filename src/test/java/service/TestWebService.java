@@ -30,9 +30,9 @@ public class TestWebService extends BookServiceTestAbstract {
 
         this.bookInWebService = new Book();
         this.bookInWebService.setIsbn("2344049029");
-        this.bookInWebService.setTitre("one piece volume 100");
+        this.bookInWebService.setTitle("one piece volume 100");
         this.bookInWebService.setFormatBook(org.example.utils.FormatBook.Grand_Format);
-        this.bookInWebService.setAuteur("ODA");
+        this.bookInWebService.setAuthor("ODA");
         this.bookInWebService.setEditeur("Toei");
     }
 
@@ -51,7 +51,7 @@ public class TestWebService extends BookServiceTestAbstract {
         this.webService.setBookRepostiory(bookRepository);
         this.bookService.setWebService(webService);
 
-        this.bookToTest.setAuteur(null); // Nous supprimons l'auteur pour que le service de livre aille chercher l'information dans le web service.
+        this.bookToTest.setAuthor(null); // Nous supprimons l'auteur pour que le service de livre aille chercher l'information dans le web service.
 
         Book savedBook = this.bookService.save(bookToTest);
 

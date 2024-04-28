@@ -42,8 +42,8 @@ public abstract class BookServiceTestAbstract {
         this.bookToTest = new Book();
         this.bookToTest.setIsbn("2344049029");
         this.bookToTest.setEditeur("Toei");
-        this.bookToTest.setTitre("one piece volume 100");
+        this.bookToTest.setTitle("one piece volume 100");
         this.bookToTest.setFormatBook(org.example.utils.FormatBook.Grand_Format);
-        this.bookToTest.setAuteur("ODA");
+        this.bookToTest.setAuthor("ODA");
     }
 }

@@ -18,12 +18,12 @@ public class BookUpdateTest  extends BookCreateTest{
 
         Book bookToUpdate = super.bookRepository.findByIsbn(super.bookToTest.getIsbn());
 
-        bookToUpdate.setTitre("OP");
+        bookToUpdate.setTitle("OP");
 
         super.bookRepository.save(bookToUpdate);
 
         assertNotNull(bookToUpdate);
-        assertEquals("OP", bookToUpdate.getTitre());
+        assertEquals("OP", bookToUpdate.getTitle());
     }
 
 }
