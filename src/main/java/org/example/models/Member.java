@@ -1,5 +1,6 @@
 package org.example.models;
 
+import org.example.exceptions.FinishReservationException;
 import org.example.exceptions.NotFoundReservationException;
 import org.example.exceptions.Over3ReservationsInMemberException;
 
@@ -76,14 +77,20 @@ public class Member {
         this.reservations.get(index).setReservationIsValid(false);
     }
 
-    public Reservation getReservation(Reservation reservation) {
+    public Reservation getReservation(Reservation reservation) throws FinishReservationException {
         int index = this.reservations.indexOf(reservation);
 
         if (index == -1) {
             throw new NotFoundReservationException();
         }
 
-        return this.reservations.get(index);
+        Reservation reservationGet = this.reservations.get(index);
+
+        if(!reservationGet.isReservationIsValid()){
+            throw new FinishReservationException();
+        }
+
+        return reservationGet;
     }
 
 
