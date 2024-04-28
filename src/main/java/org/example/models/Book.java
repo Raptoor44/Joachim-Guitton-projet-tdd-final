@@ -3,10 +3,8 @@ package org.example.models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
 public class Book {
 
-    @Id
     private String Isbn;
 
     private String Titre;

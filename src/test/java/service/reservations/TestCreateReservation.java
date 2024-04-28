@@ -1,5 +1,6 @@
 package service.reservations;
 
+import org.example.models.Reservation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -23,8 +24,7 @@ public class TestCreateReservation extends ReservationServiceTestAbstract{
 
     @Test
     public void testCreateReservation(){
-        when(this.member.addReservation(any(Reservation.class)).thenReturn(this.reservation));
 
-        assertEquals(this.reservation, this.member.addReservation(this.reservation));
+        assertEquals(true, this.member.addReservation(this.reservation));
     }
 }
