@@ -119,4 +119,14 @@ public class Member {
             }
         }
     }
+
+    public void sendMailReminderOfReservationsWithDateIsNotValid(Date dateTimeToday) {
+
+        List<Integer> reservationsWithDateIsOver = new LinkedList<Integer>();
+
+        for(Reservation reservation : reservations) {
+            if(!reservation.isValid(dateTimeToday))
+            System.out.println("La réservation : " + reservation.getId() + " est invalide");
+        }
+    }
 }
