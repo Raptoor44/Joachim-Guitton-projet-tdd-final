@@ -6,7 +6,7 @@ import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
 
-public class BookDeleteTest extends BookCreateTest{
+public class BookDeleteTest extends BookRepositoryTestAbstract{
 
 
     @BeforeEach
