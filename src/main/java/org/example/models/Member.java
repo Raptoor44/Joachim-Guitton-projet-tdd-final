@@ -1,5 +1,6 @@
 package org.example.models;
 
+import org.example.exceptions.NotFoundReservationException;
 import org.example.exceptions.Over3ReservationsInMemberException;
 
 import java.util.Date;
@@ -62,11 +63,25 @@ public class Member {
         this.sexe = sexe;
     }
 
-    public boolean addReservation(Reservation reservationParam) throws Over3ReservationsInMemberException{
+    public boolean addReservation(Reservation reservationParam) throws Over3ReservationsInMemberException, NotFoundReservationException{
         if (reservations.size() < 3) {
             return this.reservations.add(reservationParam);
         } else {
             throw new Over3ReservationsInMemberException();
         }
+    }
+
+    public void finishReservation(Reservation reservation) {
+        this.reservations.remove(reservation);
+    }
+
+    public Reservation getReservation(Reservation reservation) {
+        int index = this.reservations.indexOf(reservation);
+
+        if (index == -1) {
+            throw new NotFoundReservationException();
+        }
+
+        return this.reservations.get(index);
     }
 }
