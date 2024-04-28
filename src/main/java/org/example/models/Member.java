@@ -105,4 +105,8 @@ public class Member {
         }
         return reservationsToReturn;
     }
+
+    public List<Reservation> getHistoryOfReservations() {
+        return this.reservations;
+    }
 }
