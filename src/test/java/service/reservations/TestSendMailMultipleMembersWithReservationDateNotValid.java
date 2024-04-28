@@ -69,7 +69,7 @@ public class TestSendMailMultipleMembersWithReservationDateNotValid extends Rese
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        //Nous ajout 5 mois à la date d'aujourd'hui
+        //Nous ajoutons 5 mois en plus pour effectuer la vérification de la date limite d'une réservation.
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MONTH, 5);
 
