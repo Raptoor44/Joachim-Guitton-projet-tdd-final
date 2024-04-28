@@ -72,7 +72,7 @@ public class Member {
             }
         }
 
-        if (reservationsIsValid.size() < 3) {
+        if (reservationsIsValid.size() <= 3) {
             return this.reservations.add(reservationParam);
         } else {
             throw new Over3ReservationsInMemberException();
