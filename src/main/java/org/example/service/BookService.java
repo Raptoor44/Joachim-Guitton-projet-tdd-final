@@ -21,7 +21,7 @@ public class BookService {
 
     public Book save(Book bookParam) throws AttributesMissingException {
 
-        if (bookParam.getFormatBook() == null || bookParam.getTitle() == null || bookParam.getIsbn() == null || bookParam.getAuthor() == null || bookParam.getEditeur() == null) {
+        if (bookParam.getFormatBook() == null || bookParam.getTitle() == null || bookParam.getIsbn() == null || bookParam.getAuthor() == null || bookParam.getEditor() == null) {
             Book bookWebService;
 
             bookWebService = this.webService.getBookByIsbn(bookParam);
@@ -41,7 +41,7 @@ public class BookService {
             throw new AttributesMissingException("L'ISBN du livre n'est pas renseignée.");
         } else if (bookParam.getAuthor() == null) {
             throw new AttributesMissingException("L'auteur du livre n'est pas renseignée.");
-        }else if(bookParam.getEditeur() == null) {
+        }else if(bookParam.getEditor() == null) {
             throw new AttributesMissingException("L'Editeur du livre n'est pas renseignée");
         }
 

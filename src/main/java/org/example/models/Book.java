@@ -2,57 +2,57 @@ package org.example.models;
 
 public class Book {
 
-    private String Isbn;
+    private String isbn;
 
-    private String Title;
+    private String title;
 
-    private String Author;
+    private String author;
 
-    private String Editeur;
+    private String editor;
 
     private org.example.utils.FormatBook FormatBook;
-
-    public Book(String title, String author, String isbn, org.example.utils.FormatBook format) {
-        this.Title = title;
-        this.Author = author;
-        this.Isbn = isbn;
-        this.FormatBook = format;
-    }
 
     public Book() {
 
     }
 
+    public Book(String title, String author, String isbn, org.example.utils.FormatBook format) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.FormatBook = format;
+    }
+
     public String getIsbn() {
-        return Isbn;
+        return isbn;
     }
 
     public void setIsbn(String isbn) {
-        this.Isbn = isbn;
+        this.isbn = isbn;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String author) {
-        Author = author;
+        this.author = author;
     }
 
-    public String getEditeur() {
-        return Editeur;
+    public String getEditor() {
+        return editor;
     }
 
-    public void setEditeur(String editeur) {
-        Editeur = editeur;
+    public void setEditor(String editor) {
+        this.editor = editor;
     }
 
     public org.example.utils.FormatBook getFormatBook() {

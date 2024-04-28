@@ -22,7 +22,7 @@ public abstract class BookRepositoryTestAbstract {
         this.bookToTest.setIsbn("2344049029");
         this.bookToTest.setTitle("one piece volume 100");
         this.bookToTest.setAuthor("Oda");
-        this.bookToTest.setEditeur("Toei");
+        this.bookToTest.setEditor("Toei");
         this.bookToTest.setFormatBook(org.example.utils.FormatBook.Grand_Format);
     }
 

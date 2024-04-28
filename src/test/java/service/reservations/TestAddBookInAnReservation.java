@@ -19,7 +19,7 @@ public class TestAddBookInAnReservation extends ReservationServiceTestAbstract{
 
         this.bookToTest = new Book();
         this.bookToTest.setIsbn("2344049029");
-        this.bookToTest.setEditeur("Toei");
+        this.bookToTest.setEditor("Toei");
         this.bookToTest.setTitle("one piece volume 100");
         this.bookToTest.setFormatBook(org.example.utils.FormatBook.Grand_Format);
         this.bookToTest.setAuthor("ODA");
