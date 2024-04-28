@@ -13,6 +13,8 @@ public class Reservation {
 
     private boolean reservationIsValid = true;
 
+    private Book book;
+
     public Reservation() {
 
         this.dateCreation = new Date();
@@ -62,5 +64,10 @@ public class Reservation {
            this.reservationIsValid = false;
            return false;
        }
+    }
+
+    public boolean addBook(Book bookToTest) {
+        this.book = bookToTest;
+        return true;
     }
 }
