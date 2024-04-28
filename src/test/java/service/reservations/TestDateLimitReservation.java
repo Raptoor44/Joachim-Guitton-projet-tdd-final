@@ -24,7 +24,6 @@ public class TestDateLimitReservation extends ReservationServiceTestAbstract {
 
         this.dateTimeToday = calendar.getTime();
 
-        // Mock pour la méthode isValid()
         this.reservation = new Reservation();
     }
 
