@@ -67,7 +67,9 @@ public class Member {
         List<Reservation> reservationsIsValid = new LinkedList<Reservation>();
 
         for(Reservation reservation : reservations) { //Nous prenons que les réservations qui sont valides.
-            reservationsIsValid.add(reservation);
+            if(reservation.isReservationIsValid()){
+                reservationsIsValid.add(reservation);
+            }
         }
 
         if (reservationsIsValid.size() < 3) {
