@@ -1,5 +1,7 @@
 package org.example.models;
 
+import org.example.exceptions.Over3ReservationsInMemberException;
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -60,7 +62,11 @@ public class Member {
         this.sexe = sexe;
     }
 
-    public boolean addReservation(Reservation reservationParam) {
-        return this.reservations.add(reservationParam);
+    public boolean addReservation(Reservation reservationParam) throws Over3ReservationsInMemberException{
+        if (reservations.size() < 3) {
+            return this.reservations.add(reservationParam);
+        } else {
+            throw new Over3ReservationsInMemberException();
+        }
     }
 }

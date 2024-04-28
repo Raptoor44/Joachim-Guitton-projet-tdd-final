@@ -1,12 +1,13 @@
 package service.reservations;
 
+import org.example.exceptions.Over3ReservationsInMemberException;
 import org.example.models.Reservation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TestOver3ReservationsInMember extends ReservationServiceTestAbstract{
+public class TestOver3ReservationsInMember extends ReservationServiceTestAbstract {
 
     @BeforeEach
     public void setUp() {
@@ -15,7 +16,7 @@ public class TestOver3ReservationsInMember extends ReservationServiceTestAbstrac
 
     @Test
     public void testOver3ReservationsInMember() {
-        assertThrows(Over3ReservationsInMemberException.class, this.insert3ReservationsInMember());
+        assertThrows(Over3ReservationsInMemberException.class, () -> this.insert3ReservationsInMember());
     }
 
     public void insert3ReservationsInMember(){
