@@ -7,10 +7,6 @@ public class WebService {
 
     private BookRepostiory bookRepostiory;
 
-    public BookRepostiory getBookRepostiory() {
-        return bookRepostiory;
-    }
-
     public void setBookRepostiory(BookRepostiory bookRepostiory) {
         this.bookRepostiory = bookRepostiory;
     }

@@ -22,7 +22,7 @@ public class BookService {
     public Book save(Book bookParam) throws AttributesMissingException {
 
         if (bookParam.getFormatBook() == null || bookParam.getTitle() == null || bookParam.getIsbn() == null || bookParam.getAuthor() == null || bookParam.getEditeur() == null) {
-            Book bookWebService = new Book();
+            Book bookWebService;
 
             bookWebService = this.webService.getBookByIsbn(bookParam);
 
@@ -50,19 +50,11 @@ public class BookService {
         return book;
     }
 
-    public WebService getWebService() {
-        return webService;
-    }
-
     public void setWebService(WebService webService) {
         this.webService = webService;
     }
 
     public BookRepostiory getBookRepostiory() {
         return bookRepostiory;
-    }
-
-    public void setBookRepostiory(BookRepostiory bookRepostiory) {
-        this.bookRepostiory = bookRepostiory;
     }
 }
