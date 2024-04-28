@@ -8,7 +8,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestGetAllReservations extends ReservationServiceTestAbstract{
+public class TestGetHistoryReservations extends ReservationServiceTestAbstract{
 
 
     private List<Reservation> reservationsInTest = new LinkedList<Reservation>();
