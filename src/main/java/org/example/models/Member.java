@@ -63,7 +63,7 @@ public class Member {
         this.sexe = sexe;
     }
 
-    public boolean addReservation(Reservation reservationParam) throws Over3ReservationsInMemberException, NotFoundReservationException{
+    public boolean addReservation(Reservation reservationParam) throws Over3ReservationsInMemberException, NotFoundReservationException {
         if (reservations.size() < 3) {
             return this.reservations.add(reservationParam);
         } else {
@@ -72,7 +72,8 @@ public class Member {
     }
 
     public void finishReservation(Reservation reservation) {
-        this.reservations.remove(reservation);
+        int index = this.reservations.indexOf(reservation);
+        this.reservations.get(index).setReservationIsValid(false);
     }
 
     public Reservation getReservation(Reservation reservation) {
@@ -86,4 +87,15 @@ public class Member {
     }
 
 
+    public List<Reservation> getValidReservations() {
+
+        List<Reservation> reservationsToReturn = new LinkedList<Reservation>();
+
+        for (Reservation reservation : reservations) {
+            if (reservation.isReservationIsValid()) {
+                reservationsToReturn.add(reservation);
+            }
+        }
+        return reservationsToReturn;
+    }
 }

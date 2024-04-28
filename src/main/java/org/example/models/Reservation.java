@@ -5,11 +5,16 @@ import java.util.Date;
 
 public class Reservation {
 
+    private int id;
+
     private Date dateLimit;
 
     private Date dateCreation;
 
+    private boolean reservationIsValid = true;
+
     public Reservation() {
+
         this.dateCreation = new Date();
 
         Calendar calendar = Calendar.getInstance();
@@ -34,10 +39,27 @@ public class Reservation {
         this.dateCreation = dateCreation;
     }
 
+    public boolean isReservationIsValid() {
+        return reservationIsValid;
+    }
+
+    public void setReservationIsValid(boolean reservationIsValid) {
+        this.reservationIsValid = reservationIsValid;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public boolean isValid(Date dateToday){
        if(dateToday.compareTo(this.dateLimit) <= 0){
            return true;
        }else{
+           this.reservationIsValid = false;
            return false;
        }
     }
