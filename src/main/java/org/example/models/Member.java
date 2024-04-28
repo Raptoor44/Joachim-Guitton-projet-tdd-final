@@ -86,7 +86,7 @@ public class Member {
 
         Reservation reservationGet = this.reservations.get(index);
 
-        if(!reservationGet.isReservationIsValid()){
+        if (!reservationGet.isReservationIsValid()) {
             throw new FinishReservationException();
         }
 
@@ -108,5 +108,15 @@ public class Member {
 
     public List<Reservation> getHistoryOfReservations() {
         return this.reservations;
+    }
+
+    public void sendMailsReminderOfReservationsIsNotValid() {
+        for (Reservation reservation : reservations) {
+            if (!reservation.isReservationIsValid()) {
+                System.out.println("Envoie du mail, la réservation ayant pour id : " + reservation.getId()
+                        + " ayant pour date de signature " + reservation.getDateCreation()
+                        + " et ayant pour date de fin de validité " + reservation.getDateLimit() + " n'est plus valide");
+            }
+        }
     }
 }

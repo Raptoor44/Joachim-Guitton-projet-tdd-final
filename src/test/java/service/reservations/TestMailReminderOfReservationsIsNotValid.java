@@ -13,9 +13,9 @@ public class TestMailReminderOfReservationsIsNotValid extends ReservationService
 
     @BeforeEach
     public void setUp() {
+        super.setUp();
         insertMultipleReservations();
         finishMultipleReservations();
-        super.setUp();
     }
 
     @Test
@@ -31,7 +31,8 @@ public class TestMailReminderOfReservationsIsNotValid extends ReservationService
         String consoleOutput = outContent.toString().trim();
 
         // Utilisation des assertions pour vérifier que la sortie de la console correspond à ce qui est attendu
-        assertEquals("Hello World!", consoleOutput);
+        assertEquals("Envoie du mail, la réservation ayant pour id : 0 ayant pour date de signature Sun Apr 28 20:28:04 CEST 2024 et ayant pour date de fin de validité Wed Aug 28 20:28:04 CEST 2024 n'est plus valide\n" +
+                "Envoie du mail, la réservation ayant pour id : 1 ayant pour date de signature Sun Apr 28 20:28:04 CEST 2024 et ayant pour date de fin de validité Wed Aug 28 20:28:04 CEST 2024 n'est plus valide", consoleOutput);
     }
 
     public void insertMultipleReservations(){
