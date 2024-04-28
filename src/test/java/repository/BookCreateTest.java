@@ -26,6 +26,7 @@ public class BookCreateTest {
         this.bookToTest.setIsbn("2344049029");
         this.bookToTest.setTitre("one piece volume 100");
         this.bookToTest.setAuteur("Oda");
+        this.bookToTest.setEditeur("Toei");
         this.bookToTest.setFormatBook(org.example.utils.FormatBook.Grand_Format);
     }
 

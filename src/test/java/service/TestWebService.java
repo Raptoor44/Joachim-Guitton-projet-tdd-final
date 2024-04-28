@@ -33,6 +33,7 @@ public class TestWebService extends BookServiceTestAbstract {
         this.bookInWebService.setTitre("one piece volume 100");
         this.bookInWebService.setFormatBook(org.example.utils.FormatBook.Grand_Format);
         this.bookInWebService.setAuteur("ODA");
+        this.bookInWebService.setEditeur("Toei");
     }
 
     @Test

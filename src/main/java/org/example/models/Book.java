@@ -13,6 +13,8 @@ public class Book {
 
     private String Auteur;
 
+    private String Editeur;
+
     private org.example.utils.FormatBook FormatBook;
 
     public Book(String title, String author, String isbn, org.example.utils.FormatBook format) {
@@ -48,6 +50,14 @@ public class Book {
 
     public void setAuteur(String auteur) {
         Auteur = auteur;
+    }
+
+    public String getEditeur() {
+        return Editeur;
+    }
+
+    public void setEditeur(String editeur) {
+        Editeur = editeur;
     }
 
     public org.example.utils.FormatBook getFormatBook() {
