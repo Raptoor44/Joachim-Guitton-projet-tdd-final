@@ -38,16 +38,13 @@ public class TestWebService extends BookServiceTestAbstract {
 
     @Test
     public void testSaveBookByWebService() {
-        // Configure behavior of webService mock
         when(webService.getBookByIsbn(any())).thenReturn(bookInWebService);
 
-        // Configure behavior of bookRepository mock
         when(bookRepository.save(bookInWebService)).thenReturn(bookInWebService);
 
         //On définit le repository à l'intérieur de book service.
         when(this.bookService.getBookRepostiory().save(bookInWebService)).thenReturn(bookInWebService);
 
-        // Set the mock objects
         this.webService.setBookRepostiory(bookRepository);
         this.bookService.setWebService(webService);
 

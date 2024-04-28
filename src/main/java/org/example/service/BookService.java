@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.exceptions.AttributesMissingException;
+import org.example.exceptions.DublicationInsertException;
 import org.example.models.Book;
 import org.example.repository.BookRepostiory;
 import org.example.service.verify.IsbnValidator;
@@ -19,7 +20,7 @@ public class BookService {
         this.isbnValidator = new IsbnValidator();
     }
 
-    public Book save(Book bookParam) throws AttributesMissingException {
+    public Book save(Book bookParam) throws AttributesMissingException, DublicationInsertException {
 
         if (bookParam.getFormatBook() == null || bookParam.getTitle() == null || bookParam.getIsbn() == null || bookParam.getAuthor() == null || bookParam.getEditor() == null) {
             Book bookWebService;
@@ -32,6 +33,9 @@ public class BookService {
         }
         this.isbnValidator.validateISBN(bookParam.getIsbn());
 
+        if(this.bookRepostiory.findByIsbn(bookParam.getIsbn())!= null){
+            throw new DublicationInsertException();
+        }
 
         if (bookParam.getFormatBook() == null) {
             throw new AttributesMissingException("Le format du livre n'est pas renseignée.");
